@@ -4,6 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baipilli Naveen — Geospatial AI & Climate Data Scientist</title>
+<meta name="description" content="Portfolio of Baipilli Naveen, a Geospatial AI & Climate Data Scientist at IIT Hyderabad. Specializing in spatiotemporal ML, remote sensing, and Earth observation.">
+<meta name="keywords" content="Geospatial AI, Climate Data Scientist, GeoAI, Deep Learning, Remote Sensing, IIT Hyderabad, Spatiotemporal ML, Climate Change, Earth Observation, Python, GIS">
+<meta name="author" content="Baipilli Naveen">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bapallinaveen60.github.io/">
+<meta property="og:title" content="Baipilli Naveen — Geospatial AI & Climate Data Scientist">
+<meta property="og:description" content="M.Tech Candidate at IIT Hyderabad building AI pipelines for satellite Earth observation, spatiotemporal ML, and climate informatics.">
+<meta property="og:image" content="naveen-min.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://bapallinaveen60.github.io/">
+<meta property="twitter:title" content="Baipilli Naveen — Geospatial AI & Climate Data Scientist">
+<meta property="twitter:description" content="M.Tech Candidate at IIT Hyderabad building AI pipelines for satellite Earth observation, spatiotemporal ML, and climate informatics.">
+<meta property="twitter:image" content="naveen-min.jpg">
+
+<!-- Favicon (SVG Emoji) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🌍</text></svg>">
+
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
@@ -42,52 +63,58 @@ body{
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
 
 /* ============================================================
-   SECTION BACKGROUND IMAGES
+   SECTION BACKGROUNDS & GRADIENTS
 ============================================================ */
-#hero{
-  background-image: url('ai-generated-8777813_1280.png');
+#hero {
+  background-image: linear-gradient(to bottom, rgba(12,15,10,0.3), var(--bg)), url('ai-generated-8777813_1280.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-#about{
-  background-image: url('about2.jpg');
+#about {
+  background-image: linear-gradient(135deg, var(--bg) 0%, var(--surface) 100%);
+}
+#about::after {
+  content: '';
+  position: absolute;
+  top: 15%; right: 5%;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(124,184,122,0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+#skills {
+  background-image: linear-gradient(to bottom, var(--surface), var(--bg));
+}
+#skills::after {
+  content: '';
+  position: absolute;
+  bottom: 5%; left: 5%;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(94,196,192,0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+#experience {
+  background-image: linear-gradient(to bottom, rgba(12,15,10,0.85), rgba(12,15,10,0.95)), url('iithgate.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-#skills{
-  background-image: url('tools.jpg');
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
+#projects {
+  background-image: linear-gradient(135deg, var(--bg) 0%, var(--surface2) 100%);
 }
-#experience{
-  background-image: url('iithgate.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+#publications {
+  background-image: linear-gradient(to bottom, var(--surface2), var(--bg));
 }
-#projects{
-  background-image: url('YOUR_PROJECTS_BG.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-#publications{
-  background-image: url('YOUR_PUBLICATIONS_BG.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-#blog{
-  background-image: url('ai-generated-8777813_1280.png');
+#blog {
+  background-image: linear-gradient(to bottom, rgba(12,15,10,0.9), var(--bg)), url('ai-generated-8777813_1280.png');
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
 }
-#contact{
-  background-image: url('contact.jpg');
+#contact {
+  background-image: linear-gradient(to bottom, rgba(12,15,10,0.88), var(--bg)), url('contact.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -121,9 +148,10 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:300;
   height:64px;display:flex;align-items:center;
   justify-content:space-between;padding:0 3rem;
-  background:rgba(12,15,10,0.92);
-  backdrop-filter:blur(14px);
+  background:rgba(12,15,10,0.85);
+  backdrop-filter:blur(16px);
   border-bottom:1px solid var(--border);
+  transition:all 0.3s ease;
 }
 .nav-logo{
   font-family:var(--serif);font-size:20px;font-weight:700;
@@ -149,11 +177,23 @@ nav{
   margin:5px 0;border-radius:2px;transition:all 0.25s;
 }
 .mobile-menu{
-  display:none;position:fixed;top:64px;left:0;right:0;
-  background:rgba(12,15,10,0.98);border-bottom:1px solid var(--border);
-  z-index:290;padding:1rem 2rem;flex-direction:column;
+  position:fixed;top:64px;left:0;right:0;
+  background:rgba(12,15,10,0.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  z-index:290;padding:0 2rem;
+  display:flex;flex-direction:column;
+  max-height:0;overflow:hidden;
+  opacity:0;
+  transition:max-height 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease, padding 0.3s ease;
+  pointer-events:none;
 }
-.mobile-menu.open{display:flex}
+.mobile-menu.open{
+  max-height:400px;
+  opacity:1;
+  padding:1rem 2rem;
+  pointer-events:auto;
+}
 .mobile-menu a{
   display:block;padding:13px 0;font-size:15px;color:var(--muted);
   text-decoration:none;border-bottom:1px solid var(--border);
@@ -296,10 +336,17 @@ h2.sec-title{
   gap:10px;margin-top:2rem;
 }
 .stat-box{
-  background:rgba(28,32,24,0.85);border:1px solid var(--border);
-  border-radius:10px;padding:14px;text-align:center;transition:border-color 0.2s;
+  background:rgba(20,23,16,0.6);
+  border:1px solid var(--border);
+  backdrop-filter:blur(8px);
+  border-radius:10px;padding:14px;text-align:center;
+  transition:all 0.25s ease;
 }
-.stat-box:hover{border-color:var(--accent3)}
+.stat-box:hover{
+  border-color:var(--accent);
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(124,184,122,0.06);
+}
 .sn{font-family:var(--serif);font-size:1.9rem;font-weight:700;color:var(--accent);display:block}
 .sl{font-size:12px;color:var(--muted)}
 
@@ -386,22 +433,32 @@ h2.sec-title{
   gap:1.5rem;
 }
 .proj-card{
-  background:rgba(20,23,16,0.88);border:1px solid var(--border);
-  border-radius:14px;overflow:hidden;transition:all 0.3s;
+  background:rgba(20,23,16,0.6);
+  border:1px solid var(--border);
+  backdrop-filter:blur(8px);
+  border-radius:14px;overflow:hidden;
+  transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.proj-card:hover{border-color:var(--accent2);transform:translateY(-4px)}
+.proj-card:hover{
+  border-color:var(--accent);
+  transform:translateY(-6px);
+  box-shadow:0 12px 30px rgba(124,184,122,0.08);
+}
 .proj-card.hidden{display:none}
-.proj-img-slot{
-  width:100%;height:155px;
+.proj-img-wrap {
+  width:100%;height:165px;
   background:var(--surface2);
   border-bottom:1px solid var(--border);
-  display:flex;flex-direction:column;align-items:center;
-  justify-content:center;gap:6px;color:var(--hint);font-size:11px;
+  overflow:hidden;
+  position:relative;
 }
-.proj-img-slot svg{width:22px;height:22px;stroke:var(--hint)}
-.proj-img-slot code{
-  font-size:10px;background:rgba(12,15,10,0.8);
-  color:var(--accent);padding:2px 8px;border-radius:3px;
+.proj-img {
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform 0.4s ease;
+}
+.proj-card:hover .proj-img {
+  transform:scale(1.05);
 }
 .proj-body{padding:1.25rem}
 .ptag{
@@ -413,29 +470,71 @@ h2.sec-title{
 .t-cl{background:rgba(94,196,192,0.15);color:#5ec4c0}
 .t-he{background:rgba(212,168,83,0.15);color:#d4a853}
 .proj-title{font-size:15px;font-weight:500;color:var(--text);margin-bottom:8px;line-height:1.4}
-.proj-desc{font-size:13px;color:var(--muted);line-height:1.65}
+.proj-desc{font-size:13px;color:var(--muted);line-height:1.65;min-height:64px}
 .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
 .chip{
   font-size:11px;color:var(--hint);
   background:var(--surface2);border:1px solid var(--border);
   padding:2px 8px;border-radius:4px;
 }
+.proj-links {
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+  border-top:1px solid var(--border);
+  padding-top:12px;
+}
+.proj-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:12px;
+  font-weight:500;
+  padding:6px 14px;
+  border-radius:4px;
+  text-decoration:none;
+  transition:all 0.2s ease;
+  background:var(--accent3);
+  color:#fff;
+  border:1px solid var(--accent3);
+}
+.proj-btn.outline {
+  background:transparent;
+  color:var(--muted);
+  border:1px solid var(--border2);
+}
+.proj-btn:hover {
+  background:var(--accent2);
+  border-color:var(--accent2);
+  color:#fff;
+}
+.proj-btn.outline:hover {
+  border-color:var(--accent);
+  color:var(--accent);
+}
 .proj-card.ghost{
   display:flex;flex-direction:column;align-items:center;
   justify-content:center;text-align:center;
-  padding:2rem;min-height:260px;gap:12px;border-style:dashed;
+  padding:2rem;min-height:290px;gap:12px;border-style:dashed;
 }
 
 /* ============================================================
    PUBLICATIONS
 ============================================================ */
 .pub-card{
-  background:rgba(28,32,24,0.88);border:1px solid var(--border);
+  background:rgba(20,23,16,0.6);
+  border:1px solid var(--border);
+  backdrop-filter:blur(8px);
   border-radius:14px;padding:2rem;
   display:grid;grid-template-columns:56px 1fr;
-  gap:1.5rem;align-items:start;transition:border-color 0.2s;
+  gap:1.5rem;align-items:start;
+  transition:all 0.25s ease;
 }
-.pub-card:hover{border-color:var(--accent2)}
+.pub-card:hover{
+  border-color:var(--accent);
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(124,184,122,0.06);
+}
 .pub-icon{
   width:50px;height:50px;background:rgba(78,139,76,0.12);
   border-radius:10px;display:flex;align-items:center;
@@ -454,14 +553,20 @@ h2.sec-title{
 /* ============================================================
    BLOG
 ============================================================ */
-.blog-list{border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.blog-list{
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  background:rgba(20,23,16,0.6);
+  backdrop-filter:blur(8px);
+}
 .blog-row{
   display:grid;grid-template-columns:1fr auto;
   align-items:center;gap:2rem;padding:1.5rem 2rem;
-  background:rgba(20,23,16,0.88);
+  background:transparent;
   transition:background 0.2s;cursor:pointer;
 }
-.blog-row:hover{background:rgba(28,32,24,0.95)}
+.blog-row:hover{background:rgba(28,32,24,0.4)}
 .blog-row+.blog-row{border-top:1px solid var(--border)}
 .blog-title{font-size:15px;font-weight:500;color:var(--text);margin-bottom:4px}
 .blog-teaser{font-size:13px;color:var(--muted)}
@@ -469,6 +574,12 @@ h2.sec-title{
   font-size:11px;font-weight:500;padding:4px 12px;
   border-radius:20px;background:rgba(212,168,83,0.1);
   color:var(--amber);white-space:nowrap;
+  text-decoration:none;
+  transition:all 0.2s ease;
+}
+.blog-chip:hover {
+  background:rgba(212,168,83,0.2);
+  color:#fff;
 }
 
 /* ============================================================
@@ -506,11 +617,26 @@ h2.sec-title{
 .fg input:focus,.fg textarea:focus{border-color:var(--accent2)}
 .fg textarea{min-height:105px}
 .fg input::placeholder,.fg textarea::placeholder{color:var(--hint)}
-#fsuccess{
-  display:none;font-size:13px;color:var(--accent);
-  padding:10px 14px;border:1px solid var(--accent3);
-  border-radius:6px;margin-top:10px;
-  background:rgba(78,139,76,0.07);
+#fsuccess {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  font-size: 13px;
+  color: var(--accent);
+  padding: 12px 16px;
+  border: 1px solid var(--accent3);
+  border-radius: 6px;
+  margin-top: 14px;
+  background: rgba(78,139,76,0.07);
+  text-align: center;
+}
+#contact button.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
 }
 
 /* ============================================================
@@ -676,8 +802,8 @@ footer{
         </div>
       </div>
       <div class="about-photo-stack">
-        <img src="ai-generated-8777813_1280.png" alt="Profile headshot">
-        <img src="insat3ds.jpg" alt="INSAT satellite / lab">
+        <img src="megha_lab.png" alt="Megha Lab at IIT Hyderabad">
+        <img src="insat3ds.jpg" alt="INSAT-3DS Satellite Earth Observation Data Analysis">
       </div>
     </div>
   </div>
@@ -827,44 +953,68 @@ footer{
     <div class="proj-grid">
 
       <div class="proj-card" data-cat="ml climate">
-        <!-- Replace with: <img src="precipitation.jpg" style="width:100%;height:155px;object-fit:cover;display:block"> -->
-        <div class="proj-img-slot">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
-          <code>src="precipitation.jpg"</code>
+        <div class="proj-img-wrap">
+          <img src="precipitation.png" alt="Precipitation Classification Visualization" class="proj-img">
         </div>
         <div class="proj-body">
           <span class="ptag t-ml">M.Tech Thesis</span>
           <div class="proj-title">AI-Based Precipitation Classification using GPM, INSAT &amp; ERA5</div>
           <div class="proj-desc">ML and deep learning pipelines classifying precipitation patterns from multi-source satellite radar and atmospheric reanalysis data.</div>
           <div class="chips"><span class="chip">U-Net</span><span class="chip">Random Forest</span><span class="chip">GPM DPR</span><span class="chip">ERA5</span><span class="chip">NetCDF</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/bapallinaveen60" target="_blank" class="proj-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+            <a href="https://github.com/bapallinaveen60" target="_blank" class="proj-btn outline">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Details
+            </a>
+          </div>
         </div>
       </div>
 
       <div class="proj-card" data-cat="climate">
-        <!-- Replace with: <img src="arctic.jpg" style="width:100%;height:155px;object-fit:cover;display:block"> -->
-        <div class="proj-img-slot">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
-          <code>src="arctic.jpg"</code>
+        <div class="proj-img-wrap">
+          <img src="arctic.png" alt="Arctic Sea Ice Variability Analysis" class="proj-img">
         </div>
         <div class="proj-body">
           <span class="ptag t-cl">Climate Science</span>
           <div class="proj-title">Arctic Sea Ice Variability and Climate Teleconnections</div>
           <div class="proj-desc">40+ years of satellite-derived sea ice analysed via wavelet analysis. Teleconnections with ENSO, NAO, AO and solar radiation investigated.</div>
           <div class="chips"><span class="chip">Wavelet</span><span class="chip">Time-series</span><span class="chip">ENSO/NAO</span><span class="chip">Python</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/bapallinaveen60" target="_blank" class="proj-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+            <a href="https://github.com/bapallinaveen60" target="_blank" class="proj-btn outline">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Details
+            </a>
+          </div>
         </div>
       </div>
 
       <div class="proj-card" data-cat="health ml">
-        <!-- Replace with: <img src="dengue.jpg" style="width:100%;height:155px;object-fit:cover;display:block"> -->
-        <div class="proj-img-slot">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
-          <code>src="dengue.jpg"</code>
+        <div class="proj-img-wrap">
+          <img src="dengue.png" alt="Dengue Hotspot Prediction Risk Maps" class="proj-img">
         </div>
         <div class="proj-body">
           <span class="ptag t-he">Public Health</span>
           <div class="proj-title">Dengue Hotspot Prediction using Spatiotemporal ML</div>
           <div class="proj-desc">Random Forest and XGBoost with NDVI, land surface temperature and terrain indices. Spatiotemporal disease risk maps generated.</div>
           <div class="chips"><span class="chip">XGBoost</span><span class="chip">NDVI</span><span class="chip">GeoPandas</span><span class="chip">Risk maps</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/bapallinaveen60" target="_blank" class="proj-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+            <a href="https://medium.com/@baipallinaveen60/when-cities-become-breeding-grounds-mapping-dengues-hidden-hotspots-in-bhopal-10fb3c22aae5" target="_blank" class="proj-btn outline">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Read Article
+            </a>
+          </div>
         </div>
       </div>
 
@@ -1061,15 +1211,44 @@ function filterP(cat, btn) {
 }
 
 function submitForm() {
-  const n = document.getElementById('cf-name').value.trim();
-  const e = document.getElementById('cf-email').value.trim();
-  const m = document.getElementById('cf-msg').value.trim();
-  if (!n || !e || !m) { alert('Please fill in all fields.'); return; }
-  document.getElementById('fsuccess').style.display = 'block';
-  document.getElementById('cf-name').value  = '';
-  document.getElementById('cf-email').value = '';
-  document.getElementById('cf-msg').value   = '';
-  setTimeout(() => { document.getElementById('fsuccess').style.display = 'none'; }, 5000);
+  const n = document.getElementById('cf-name');
+  const e = document.getElementById('cf-email');
+  const m = document.getElementById('cf-msg');
+  const btn = document.querySelector('#contact button.btn-primary');
+  const success = document.getElementById('fsuccess');
+  
+  if (!n.value.trim() || !e.value.trim() || !m.value.trim()) {
+    alert('Please fill in all fields.');
+    return;
+  }
+  
+  // Set loading state
+  const originalText = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = `<svg class="spinner" width="16" height="16" viewBox="0 0 50 50" style="animation: spin 1.5s linear infinite; display: inline-block; vertical-align: middle; fill: none; stroke: currentColor; stroke-dasharray: 80, 200; stroke-dashoffset: 0; stroke-linecap: round; margin-right: 8px;"><circle cx="25" cy="25" r="20" stroke-width="5"></circle></svg> Sending...`;
+  
+  // Simulate API request
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.innerHTML = originalText;
+    
+    success.style.display = 'block';
+    // Small timeout to allow transition to trigger
+    setTimeout(() => {
+      success.style.opacity = '1';
+      success.style.transform = 'translateY(0)';
+    }, 50);
+    
+    n.value = '';
+    e.value = '';
+    m.value = '';
+    
+    setTimeout(() => {
+      success.style.opacity = '0';
+      success.style.transform = 'translateY(10px)';
+      setTimeout(() => { success.style.display = 'none'; }, 300);
+    }, 5000);
+  }, 1500);
 }
 
 function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
